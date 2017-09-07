@@ -16,6 +16,8 @@ namespace Sept5_2017OOPclassExercises
         private bool isMale;
         private int age;
         private bool isHungry;
+        private bool isClean;
+        private bool isContent;
         //they are private so random schmucks don't have access to them.
 
         //properties
@@ -27,11 +29,15 @@ namespace Sept5_2017OOPclassExercises
             set { this.name = value; }
         }
 
-            public string FurColor
+        public string FurColor
         {
             get { return this.furColor; }
             set { this.furColor = value; }
         }
+
+        public int FurLength { get; set; } //this is shorthand for the long way...
+                                            //except I think we learned there is a small difference
+                                            //maybe it's you can exclude get or set?
 
         public int Age
         {
@@ -41,11 +47,25 @@ namespace Sept5_2017OOPclassExercises
         }
             //etc...
 
+        public bool IsClean
+        {
+            get { return this.isClean; }
+            set { this.isClean = value; }
+        }
+
+        public bool IsContent
+        {
+            get { return this.isContent; }
+            set { this.isContent = value; }
+        }
+
         //constructor:
             //this is the default constructor
         public Cat()
         {
             this.name = "Mittens";
+            this.isContent = true;
+            this.isClean = false;
             //if other names aren't set, the name will be Mittens
         }
 
@@ -55,7 +75,7 @@ namespace Sept5_2017OOPclassExercises
             //you can have more, so long as they have parameters
             //you'll need to specify the parameters when you create an instance using this constructor
 
-        public Cat(string name, string furColor, int furLength, int age, bool isMale)
+        public Cat(string name, string furColor, int furLength, int age, bool isMale, bool isHungry, bool isClean, bool isContent)
         {
             this.name = name;
             this.furColor = furColor;
@@ -97,5 +117,69 @@ namespace Sept5_2017OOPclassExercises
 
         //some programs use constructors to acquire things we need vs things we want
         //like, amazon needs your address. phone is optional.
+
+        //methods:
+
+        public void Eat()
+        {
+            if (isHungry)
+            {
+                Console.WriteLine("I'm eating... Now stuffed.");
+                isHungry = false;
+            }
+
+            else if (!isHungry)
+            {
+                Console.WriteLine("I'm not hungry.");
+            }
+        }
+
+        public void Run()
+        {
+            Console.WriteLine("I am running fast and far.");
+            this.isHungry = true;
+            Console.WriteLine("So now I'm hungry. And dirty");
+            this.isClean = false;
+        }
+
+        public void Groom()
+        {
+            if (isClean)
+            {
+                Console.WriteLine("I'm clean, so now I will nap.");
+            }
+
+            else
+            {
+                Console.WriteLine("I'm dirty so I will groom myself.");
+                this.isClean = true;
+                Console.WriteLine("Now I am clean.");
+            }
+        }
+
+        public void Purr()
+        {
+            if (isContent)
+            {
+                Console.WriteLine("Prrrrr.");
+            }
+
+            else
+            {
+                Console.WriteLine("I need a head scratch.");
+                this.isContent = true;
+                Console.WriteLine("Thanks. Prrrr.");
+            }
+        }
+
+        public void Sleep()
+        {
+            Console.WriteLine("I'm a very sleepy kitty. Gnight!");
+        }
+
+        public void Talk()
+        {
+            Console.WriteLine($"My name is {this.name} and I can talk.");
+        }
     }
 }

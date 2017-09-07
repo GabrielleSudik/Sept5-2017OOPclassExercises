@@ -29,7 +29,7 @@ namespace Sept5_2017OOPclassExercises
         static void Main(string[] args)
         {
             Cat cat1 = new Cat();  //uses default constructor
-            Cat cat2 = new Cat("Neko", "black", 1, 4, false); //using other constructor
+            Cat cat2 = new Cat("Neko", "black", 1, 4, false, false, false, false); //using other constructor
                                                               //hovering on () will show what you need to pass
 
             Console.WriteLine(cat1.Name);
@@ -51,6 +51,40 @@ namespace Sept5_2017OOPclassExercises
             Cat cat3 = new Sept5_2017OOPclassExercises.Cat("Billy");
 
             Console.WriteLine(cat3.Name);
+
+            cat2.Eat();
+            cat2.Run();
+            cat2.Eat();
+
+            cat2.Groom();
+            cat2.Purr();
+
+            cat1.Groom();
+            cat1.Purr();
+
+            cat1.Talk();
+            cat2.Talk();
+
+            cat1.FurColor = "orange";
+            Console.WriteLine(cat1.FurColor);
+
+            Console.WriteLine();
+
+            Dog dog1 = new Dog();
+            Dog dog2 = new Dog(5, 8, 2, 300);
+
+            dog1.Potty();
+            dog1.Bark();
+            dog1.Run();
+            dog1.Cuddle();
+            Console.WriteLine(  );
+
+            dog2.Potty();
+            dog2.Bark();
+            dog2.Run();
+            dog2.Cuddle();
+
+
 
             Console.ReadLine();
         }
