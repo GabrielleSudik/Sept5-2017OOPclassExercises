@@ -48,7 +48,7 @@ namespace Sept5_2017OOPclassExercises
             Console.WriteLine(cat1.Age); //we will get 0 because we don't set it, so default is 0.
             Console.WriteLine(cat2.Age);
 
-            Cat cat3 = new Sept5_2017OOPclassExercises.Cat("Billy");
+            Cat cat3 = new Sept5_2017OOPclassExercises.Cat("Billy"); //that extra stuff just got added by VS. not needed.
 
             Console.WriteLine(cat3.Name);
 
@@ -77,13 +77,26 @@ namespace Sept5_2017OOPclassExercises
             dog1.Bark();
             dog1.Run();
             dog1.Cuddle();
+            dog1.Cuddle("Billy"); //this parameter calls the Dog.Cuddle method that accepts a string
             Console.WriteLine(  );
 
             dog2.Potty();
             dog2.Bark();
             dog2.Run();
             dog2.Cuddle();
+            dog2.Cuddle("Sally"); //ditto
 
+            Console.WriteLine();
+
+            Superhero ww = new Sept5_2017OOPclassExercises.Superhero();
+            Superhero ck = new Sept5_2017OOPclassExercises.Superhero("Clark Kent");
+
+            ww.FightEvil();
+            ww.FightEvil();
+            ww.FightEvil();
+
+            ww.Sleep();
+            ww.NextLevel();
 
 
             Console.ReadLine();

@@ -63,5 +63,11 @@ namespace Sept5_2017OOPclassExercises
             Console.WriteLine($"No one wants to cuddle a dog with hair {this.hairLength} inches long. Ugh.");
         }
 
+        public void Cuddle(string name) //you created this extra method that accepts parameters. See "program".
+            //note the accepted parameter has nothing to do with Dog directly
+        {
+            Console.WriteLine($"{name} is cuddling with the dog.");
+        }
+
     }
 }
